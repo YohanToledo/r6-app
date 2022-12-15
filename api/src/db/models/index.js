@@ -15,6 +15,7 @@ const operatorSchema = new mongoose.Schema(
     armor: Number,
     speed: Number,
     difficulty: String,
+    team: String,
     imageUrl: String,
     iconUrl: String,
   },
