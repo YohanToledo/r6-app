@@ -1,4 +1,4 @@
-const db = require("../db/db");
+const db = require("../../db/db");
 
 const findAll = async (req, res) => {
   const Operators = db.Mongoose.model(
