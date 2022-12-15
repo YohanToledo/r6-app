@@ -7,13 +7,15 @@ const Card = ({ operatorInfo }) => {
 
   return (
     <div className={`card-container ${operatorInfo.team}`}>
-      <img className="operator-iamge" src={operatorInfo.imageUrl} alt="" />
+      <img
+        onClick={() => setShow(true)}
+        className="operator-iamge"
+        src={operatorInfo.imageUrl}
+        alt=""
+      />
       <h3 className="op-name">
-        <b>{operatorInfo.operator}</b>
+        <b>{operatorInfo.operator.toUpperCase()}</b>
       </h3>
-      <button className="info-button" onClick={() => setShow(true)}>
-        <b>Info</b>
-      </button>
       <Modal info={operatorInfo} onClose={() => setShow(false)} show={show} />
     </div>
   );
