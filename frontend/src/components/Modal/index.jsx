@@ -16,43 +16,65 @@ const Modal = ({ show, onClose, info }) => {
           </div>
           <div className="custom-modal-body">
             <div>
-              <b>Name: </b>
-              {info.name}
+              <p>
+                <b>Name: </b>
+                {info.name}
+              </p>
             </div>
             <div>
-              <b>Affiliation:</b> {info.affiliation}
+              <p>
+                <b>Affiliation:</b> {info.affiliation}
+              </p>
             </div>
             <div>
-              <b>Birth Date: </b>
-              {info.birthDate}
+              <p>
+                <b>Birth Date: </b>
+                {info.birthDate}
+              </p>
             </div>
             <div>
-              <b>Birth Place: </b>
-              {info.birthPlace}
+              <p>
+                <b>Birth Place: </b>
+                {info.birthPlace}
+              </p>
             </div>
             <div>
-              <b>Height: </b>
-              {info.height}
+              <p>
+                <b>Height: </b>
+                {info.height}
+              </p>
             </div>
             <div>
-              <b>Weight: </b>
-              {info.weight}
+              <p>
+                <b>Weight: </b>
+                {info.weight}
+              </p>
             </div>
             <div>
-              <b>Released:</b> {info.released}
+              <p>
+                <b>Released:</b> {info.released}
+              </p>
             </div>
             <div>
-              <b>Armor:</b> {info.armor}
+              <p>
+                <b>Armor:</b> {info.armor}
+              </p>
             </div>
             <div>
-              <b>Speed: </b> {info.speed}
+              <p>
+                <b>Speed: </b> {info.speed}
+              </p>
             </div>
             <div>
-              <b>Difficulty:</b> {info.difficulty}
+              <p>
+                <b>Difficulty:</b> {info.difficulty}
+              </p>
             </div>
             <div>
-              <b>Team: </b>
-              {info.team}
+              <p>
+                <b>Team: </b>
+                {info.team}
+              </p>
             </div>
           </div>
           <div className="custom-modal-footer">
