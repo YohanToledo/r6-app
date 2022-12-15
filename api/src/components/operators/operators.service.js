@@ -45,4 +45,21 @@ const create = async (req, res) => {
   }
 };
 
-module.exports = { findAll, create };
+const update = async (req, res) => {
+  const Operators = db.Mongoose.model(
+    "operators",
+    db.OperatorSchema,
+    "operators"
+  );
+
+  const filter = { _id: req.params.id };
+  const data = { ...req.body };
+
+  try {
+    const result = await Operators.findOneAndUpdate(filter, data);
+    successRes(res, result, 200);
+  } catch (error) {
+    errorRes(res, error, "error to update operator");
+  }
+};
+module.exports = { findAll, create, update };

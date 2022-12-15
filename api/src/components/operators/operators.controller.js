@@ -11,4 +11,8 @@ controller.post("", async function (req, res) {
   service.create(req, res);
 });
 
+controller.put("/:id", async function (req, res) {
+  service.update(req, res);
+});
+
 module.exports = controller;
