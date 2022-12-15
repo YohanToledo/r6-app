@@ -18,7 +18,10 @@ const operatorSchema = new mongoose.Schema(
     imageUrl: String,
     iconUrl: String,
   },
-  { collection: "operators" }
+  {
+    collection: "operators",
+    versionKey: false,
+  }
 );
 
 module.exports = { operatorSchema };

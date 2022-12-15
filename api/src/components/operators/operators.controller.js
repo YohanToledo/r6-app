@@ -3,11 +3,11 @@ const service = require("./operators.service");
 
 const controller = express.Router();
 
-controller.get("/operators", async function (req, res) {
+controller.get("", async function (req, res) {
   service.findAll(req, res);
 });
 
-controller.post("/operators", async function (req, res) {
+controller.post("", async function (req, res) {
   service.create(req, res);
 });
 

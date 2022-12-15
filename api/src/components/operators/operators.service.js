@@ -1,4 +1,10 @@
 const db = require("../../db/db");
+const {
+  errorRes,
+  successRes,
+  errData,
+} = require("../../common/responses/index");
+const validateSchema = require("../../common/helpers/validate-schema");
 
 const findAll = async (req, res) => {
   const Operators = db.Mongoose.model(
@@ -7,7 +13,7 @@ const findAll = async (req, res) => {
     "operators"
   );
 
-  const ops = await Operators.find({}); //.lean().exec();
+  const ops = await Operators.find({}).lean().exec();
 
   res.json(ops);
 };
@@ -19,9 +25,24 @@ const create = async (req, res) => {
     "operators"
   );
 
-  const ops = await Operators.save(req); //.lean().exec();
+  const { isValid, missingFileds } = validateSchema(req.body);
+  console.log(isValid);
 
-  res.json(ops);
+  if (isValid) {
+    const op = new Operators({
+      _id: new db.Mongoose.Types.ObjectId(),
+      ...req.body,
+    });
+
+    try {
+      const result = await op.save();
+      successRes(res, result, 201);
+    } catch (error) {
+      errorRes(res, error, "error to create operator");
+    }
+  } else {
+    errData(res, `Invalid data! Missing fields: \n${missingFileds}`);
+  }
 };
 
 module.exports = { findAll, create };
