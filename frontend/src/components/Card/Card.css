@@ -10,12 +10,16 @@
 
 .card-container:hover {
   box-shadow: 0px 0px 5px 5px #3577b4;
+}
+
+.card-container:focus {
+  box-shadow: 0px 0px 5px 5px #3577b4;
   transform: scale(1.03);
 }
 
 .operator-iamge {
   height: 160px;
-  width: 80px;
+  width: 90px;
   border-radius: 8px 8px 0 0;
 }
 
@@ -28,14 +32,14 @@
 }
 
 .attack {
-  background-color: #813721;
+  background-color: #d28451;
 }
 
 .info-button {
   width: 80%;
   height: 45px;
   border-radius: 5px;
-  background-color: #3f8cd3;
+  background-color: #2599ff;
   outline: none;
   box-shadow: none;
   border: none;
