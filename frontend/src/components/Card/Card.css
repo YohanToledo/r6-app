@@ -6,6 +6,11 @@
   align-items: center;
   padding: 10px 10px 20px 10px;
   border-radius: 8px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .card-container:hover {
