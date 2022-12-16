@@ -29,6 +29,7 @@ const operatorSchema = {
   armor: 0,
   speed: 0,
   difficulty: "",
+  team: "",
   imageUrl: "",
   iconUrl: "",
 };
