@@ -1,8 +1,12 @@
+import { useEffect } from "react";
 import Card from "../../components/Card";
 import Navbar from "../../components/Navbar";
+import axios from "axios";
+import { useState } from "react";
 
 const Operators = () => {
-  const operators = [
+  /*let operators = [
+    
     {
       _id: 350535335,
       operator: "sledge",
@@ -94,6 +98,7 @@ const Operators = () => {
         "https://ik.imagekit.io/yohan/r6/BANDIT.png?ik-sdk-version=javascript-1.4.3&updatedAt=1671141879431",
       iconUrl: "",
     },
+    
     {
       _id: 350535335,
       operator: "blackbeard",
@@ -113,6 +118,19 @@ const Operators = () => {
       iconUrl: "",
     },
   ];
+  */
+
+  const [operators, setOperators] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_BASE_URL}/operators`)
+      .then((response) => {
+        console.log(response.data);
+        setOperators(response.data);
+      })
+      .catch((error) => console.log(`\nError to find all operators: ${error}`));
+  }, []);
 
   operators.sort((a, b) => {
     let fa = a.operator.toLowerCase(),
