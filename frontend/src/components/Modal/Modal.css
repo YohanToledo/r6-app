@@ -9,16 +9,36 @@
   align-items: center;
   justify-content: center;
 
-  -webkit-animation: fadeInFromNone 0.5s ease-out;
-  -moz-animation: fadeInFromNone 0.5s ease-out;
-  -o-animation: fadeInFromNone 0.5s ease-out;
-  animation: fadeInFromNone 0.5s ease-out;
+  /*
+  -webkit-animation: fadeInFromNone 0.3s ease-out;
+  -moz-animation: fadeInFromNone 0.3s ease-out;
+  -o-animation: fadeInFromNone 0.3s ease-out;
+  animation: fadeInFromNone 0.3s ease-out;
+  */
 }
 
 .custom-modal-content {
-  width: 500px;
+  width: 740px;
   background-color: #114f85;
   border-radius: 5px;
+
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+@media only screen and (min-width: 600px) {
+  .custom-modal-content {
+    display: flex;
+  }
+
+  .op-image {
+    margin-top: 120px;
+  }
+}
+
+.op-image {
+  width: 220px;
+  height: 400px;
 }
 
 .custom-modal-header,

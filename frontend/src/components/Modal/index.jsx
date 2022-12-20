@@ -8,6 +8,7 @@ const Modal = ({ show, onClose, info }) => {
   return (
     <div className="custom-modal" onClick={onClose}>
       <div className="custom-modal-content" onClick={(e) => e.stopPropagation}>
+        <img className="op-image" src={info.imageUrl} alt=""></img>
         <div className="custom-modal-container">
           <div className="custom-modal-header">
             <h4 className="custom-modal-title">

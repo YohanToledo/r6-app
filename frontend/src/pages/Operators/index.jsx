@@ -3,6 +3,7 @@ import Card from "../../components/Card";
 import Navbar from "../../components/Navbar";
 import axios from "axios";
 import { useState } from "react";
+import ops from "../../static/operators.json";
 
 const Operators = () => {
   const [operators, setOperators] = useState([]);
@@ -14,7 +15,10 @@ const Operators = () => {
         console.log(response.data);
         setOperators(response.data);
       })
-      .catch((error) => console.log(`\nError to find all operators: ${error}`));
+      .catch((error) => {
+        console.log(`\nError to find all operators: ${error}`);
+        setOperators(ops);
+      });
   }, []);
 
   operators.sort((a, b) => {
